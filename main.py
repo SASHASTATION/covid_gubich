@@ -271,6 +271,7 @@ def process_country(country, owid_df, train_end='2020-12-01', future_days=13):
     #  80% доверительный интервал Rt
     rt_summary = az.summary(inference_data.posterior['r_t'], hdi_prob=0.8)  # 80% HDI
     # Predictions: mean positive cases
+
     predicted_full = inference_data.posterior['positive'].mean(dim=['chain', 'draw'])  # Average over samples
     # Real data for comparison up to 14.12.2020
     real_future = owid_df[
