@@ -202,6 +202,7 @@ class GenerativeModel:
                 p=p_ppc,
                 dims="nonzero_date",
             )
+
         return self.model  # Return built model
 
     # =========================================================
